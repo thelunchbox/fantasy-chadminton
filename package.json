@@ -1,0 +1,25 @@
+{
+  "name": "fantasy-chadminton",
+  "version": "1.0.0",
+  "description": "a fantasy chadminton simulator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thelunchbox/fantasy-chadminton.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thelunchbox/fantasy-chadminton/issues"
+  },
+  "homepage": "https://github.com/thelunchbox/fantasy-chadminton#readme",
+  "dependencies": {
+    "capitalize": "^2.0.3",
+    "human-names": "^1.0.11",
+    "random-words": "^1.1.1",
+    "uuid": "^8.3.2"
+  }
+}
