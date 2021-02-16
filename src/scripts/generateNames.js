@@ -6,13 +6,7 @@ const uuid = require('uuid').v4;
 const fs = require('fs');
 const path = require('path');
 
-const POSITIONS = {
-  STRIKER: 'striker',
-  SWEEPER: 'sweeper',
-  DEFENDER: 'defender',
-  CHAD: 'chad',
-  GOALKEEPER: 'goalkeeper',
-};
+const { POSITIONS, attributeMap } = require('../shared/constants');
 
 const positionsPerTeam = {
   [POSITIONS.STRIKER]: 3,
@@ -21,24 +15,6 @@ const positionsPerTeam = {
   [POSITIONS.CHAD]: 2,
   [POSITIONS.GOALKEEPER]: 2,
 };
-
-const attributes = [
-  'speed',
-  'quick',
-  'shot',
-  'power',
-  'tough',
-  'stamina',
-  'heart',
-];
-
-const attributeMap = {
-  [POSITIONS.STRIKER]: [4, 4, 5, 3, 2, 4, 1],
-  [POSITIONS.SWEEPER]: [3, 5, 4, 4, 3, 5, 1],
-  [POSITIONS.DEFENDER]: [2, 4, 2, 5, 5, 3, 1],
-  [POSITIONS.CHAD]: [2, 3, 1, 5, 5, 4, 3],
-  [POSITIONS.GOALKEEPER]: [1, 5, 1, 3, 6, 4, 1],
-}
 
 const getAttributes = position => attributeMap[position].map(attr => Math.max(attr, Math.round(Math.random() * 100) / 10));
 
@@ -92,6 +68,7 @@ const generatePositionPlayers = (position, team) => {
       last: `${prefix}${words(lastNameLength).map(capitalize).join('-')}${suffix}`,
       position,
       age: getAge(),
+      number: Math.floor(Math.random() * 100),
       team,
       attributes: getAttributes(position),
     };
