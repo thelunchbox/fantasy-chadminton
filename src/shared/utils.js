@@ -1,5 +1,7 @@
 const { POSITIONS } = require('../shared/constants');
 
+const getTeamPlayers = (team, players) => players.filter(p => p.team === team.id)
+
 function getTeamPower(players) {
   return players.reduce((agg, p) => {
     return agg + p.attributes.reduce((sum, attr) => sum + attr, 0);
@@ -26,7 +28,7 @@ function getRandomItem(array, { distribution } = {}) {
 
 function getRandomWeighted(array) {
   const len = array.length;
-  const i = Math.floor(Math.sqrt(Math.random() * (len * len)));
+  const i = len - Math.ceil(Math.sqrt(Math.random() * (len * len)));
   return array[i];
 }
 
@@ -45,17 +47,71 @@ function scoreRating(p) {
     (quick / 2) +
     (stamina / 2) +
     (heart / 3) +
-    (Math.random() * goalOpportunityScore[p.position])
+    goalOpportunityScore[p.position]
   );
 }
 
-function scoreSort(p1, p2) {
-  return scoreRating(p2) - scoreRating(p1);
+function faceoffRating(p) {
+  const [speed, quick, shot, power, tough, stamina, heart] = p.attributes;
+  return (
+    quick +
+    tough +
+    (power / 2) +
+    (heart / 2)
+  );
+}
+
+function goalieRating(p) {
+  const [speed, quick, shot, power, tough, stamina, heart] = p.attributes;
+  return (
+    quick +
+    heart +
+    tough +
+    (power / 3)
+  );
+}
+
+function passerRating(p) {
+  const [speed, quick, shot, power, tough, stamina, heart] = p.attributes;
+  return (
+    speed +
+    stamina +
+    (heart * 2) +
+    (quick / 2)
+  );
+}
+
+function defenderRating(p) {
+  const [speed, quick, shot, power, tough, stamina, heart] = p.attributes;
+  return (
+    quick +
+    power +
+    heart +
+    (stamina / 2) +
+    (tough * 2)
+  );
+}
+
+function playmakerRating(p) {
+  const [speed, quick, shot, power, tough, stamina, heart] = p.attributes;
+  return (
+    quick +
+    heart +
+    stamina +
+    (speed * 2) +
+    (tough / 2)
+  );
 }
 
 module.exports = {
   getRandomItem,
   getRandomWeighted,
+  getTeamPlayers,
   getTeamPower,
-  scoreSort,
+  defenderRating,
+  faceoffRating,
+  goalieRating,
+  passerRating,
+  playmakerRating,
+  scoreRating,
 };

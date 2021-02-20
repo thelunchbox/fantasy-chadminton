@@ -1,13 +1,17 @@
-const EVENT_TYPES = {
-  FAST_BREAK: 'fastBreak',
-  STEAL: 'steal',
-  BLOCK: 'block',
-  SAVE: 'save',
-  STICK_BREAK: 'stickBreak',
-  HIT: 'hit',
-  GOAL: 'goal',
+const EVENT = {
+  CONTEST: 'contest',
   FACEOFF: 'faceoff',
   TURNOVER: 'turnover',
+};
+
+const RESULT = {
+  BLOCK: 'block',
+  BREAK: 'break',
+  GOAL: 'goal',
+  HIT: 'hit',
+  PASS: 'pass',
+  SAVE: 'save',
+  STEAL: 'steal',
 };
 
 const POSITIONS = {
@@ -37,8 +41,9 @@ const attributes = [
 ];
 
 module.exports = {
-  EVENT_TYPES,
+  EVENT,
   POSITIONS,
+  RESULT,
   attributes,
   attributeMap,
 };

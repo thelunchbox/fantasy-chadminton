@@ -1,13 +1,16 @@
 const { simulateGame } = require('./src/simulate/simulateGame');
 const teams = require('./src/data/teams.json');
 const players = require('./src/data/players-keep.json');
-const { getTeamPower } = require('./src/shared/utils');
+const { getTeamPower, getTeamPlayers } = require('./src/shared/utils');
 
-const away = teams[0];
-const home = teams[1];
+const awayIndex = Math.floor(Math.random() * teams.length);
+const away = teams[awayIndex];
+const otherTeams = teams.filter(t => t.id !== away.id);
+const homeIndex = Math.floor(Math.random() * otherTeams.length);
+const home = teams[homeIndex];
 
-away.players = players.filter(p => p.team === away.id);
-home.players = players.filter(p => p.team === home.id);
+away.players = getTeamPlayers(away, players);
+home.players = getTeamPlayers(home, players);
 
 console.log(0);
 console.log('MATCHUP PREVIEW');
@@ -17,4 +20,16 @@ console.log(away.name, away.nickname, ' -> ', awayPower, awayPower / (homePower 
 console.log(home.name, home.nickname, ' -> ', homePower, homePower / (homePower + awayPower));
 console.log(home.venue, home.city, home.state);
 
-simulateGame(away, home);
+const COUNT = 10000;
+const wins = [0, 0];
+
+for (let i = 0; i < COUNT; i++) {
+  const { awayScore, homeScore } = simulateGame(away, home, () => {});
+  if (awayScore > homeScore) {
+    wins[0]++;
+  } else {
+    wins[1]++;
+  }
+}
+
+console.log(wins.map(x => x / COUNT));
