@@ -5,9 +5,9 @@ const { getTeamPower, getTeamPlayers } = require('./src/shared/utils');
 
 const awayIndex = Math.floor(Math.random() * teams.length);
 const away = teams[awayIndex];
-const otherTeams = teams.filter(t => t.id !== away.id);
+const otherTeams = teams.filter(t => t.id !== away.id && t.divId === away.divId);
 const homeIndex = Math.floor(Math.random() * otherTeams.length);
-const home = teams[homeIndex];
+const home = otherTeams[homeIndex];
 
 away.players = getTeamPlayers(away, players);
 home.players = getTeamPlayers(home, players);
@@ -16,8 +16,8 @@ console.log(0);
 console.log('MATCHUP PREVIEW');
 const awayPower = getTeamPower(away.players);
 const homePower = getTeamPower(home.players);
-console.log(away.name, away.nickname, ' -> ', awayPower, awayPower / (homePower + awayPower));
-console.log(home.name, home.nickname, ' -> ', homePower, homePower / (homePower + awayPower));
+console.log(away.name, away.nickname, `(${away.division})`, ' -> ', awayPower, awayPower / (homePower + awayPower));
+console.log(home.name, home.nickname, `(${home.division})`, ' -> ', homePower, homePower / (homePower + awayPower));
 console.log(home.venue, home.city, home.state);
 
 const COUNT = 10000;

@@ -28,6 +28,24 @@ const teamBalance = (a, b) => {
 };
 
 const processEvent = {
+  [EVENT.FASTBREAK]: (prev) => {
+    const r2 = Math.random();
+    if (r2 < 0.8) return [{ player: prev.player, log: 'offense/fastBreak/shot' }, EVENT.SHOT];
+    else return [{ turnover: true, log: 'offense/fastBreak/turnover' }];
+  },
+  [EVENT.SHOT]: (offense, defense, prev) => {
+    const playmaker = prev.player ?
+      offense.players.find(p => p.id === prev.player) :
+      getRandomWeighted(offense.players.filter(p => p.position !== POSITIONS.GOALKEEPER).sort(sortBy(scoreRating)));
+    const goalie = defense.goalie;
+    const gp = goalieRating(goalie);
+    const sp = scoreRating(playmaker);
+    const goal = Math.random() > sp / (gp * 1.2);
+    if (goal) {
+      return [{ assist: offense.assistTo, player: playmaker.id, type: RESULT.GOAL, turnover: true, log: 'offense/goal' }];
+    }
+    return [{ player: goalie.id, type: RESULT.SAVE, turnover: true, log: 'defense/save' }];
+  },
   [EVENT.CONTEST]: (offense, defense) => {
     const playmaker = getRandomWeighted(offense.players.filter(p => p.position !== POSITIONS.GOALKEEPER).sort(sortBy(playmakerRating)));
     const defender = getRandomWeighted(defense.players.filter(p => p.position !== POSITIONS.GOALKEEPER).sort(sortBy(defenderRating)));
@@ -37,38 +55,24 @@ const processEvent = {
     const dPower = 1 - pPower;
     if (dPower > pPower) {
       const diff = dPower - pPower;
-      // console.log('defense wins by', diff);
       const r = Math.random();
-      if (r < diff * 3) return [{ player: defender.id, type: RESULT.STEAL, turnover: true, log: 'defense/steal' }, Math.random() < 0.25 ? EVENT.FAST_BREAK : null];
+      if (r < diff * 3) return [{ player: defender.id, type: RESULT.STEAL, turnover: true, log: 'defense/steal' }, Math.random() < 0.25 ? EVENT.FASTBREAK : null];
       if (r < diff * 8) return [{ player: defender.id, type: RESULT.HIT, turnover: Math.random() < 0.25, log: 'defense/hit' }];
       return [{ player: defender.id, type: RESULT.BLOCK, turnover: Math.random() < 0.25, log: 'defense/block' }];
     }
-    let shootIt = false;
     if (dPower < pPower) {
       const diff = pPower - dPower;
-      // console.log('offense wins by', diff);
       const r = Math.random();
       if (r < diff * 0.75) {
-        const r2 = Math.random();
-        if (r2 < 0.8) shootIt = true; // don't return, allow to fall through
-        else return [{ turnover: true, log: 'offense/fastBreak/turnover' }];
+        return [{ player: playmaker.id, log: 'offense/fastbreak' }, EVENT.FASTBREAK];
       }
-      if (r < diff * 5 || shootIt) {
-        const goalie = defense.goalie;
-
-        const gp = goalieRating(goalie);
-        const sp = scoreRating(playmaker);
-        const goal = Math.random() > sp / (gp * 1.2);
-        const prefix = shootIt ? 'fastBreak/' : '';
-        if (goal) {
-          return [{ assist: offense.assistTo, player: playmaker.id, type: RESULT.GOAL, turnover: true, log: 'offense/' + prefix + 'goal' }];
-        }
-        return [{ player: goalie.id, type: RESULT.SAVE, turnover: true, log: 'defense/' + prefix + 'save' }];
+      if (r < diff * 5) {
+        return [{ player: playmaker.id, log: 'offense/shot' }, EVENT.SHOT];
       }
       const pp = passerRating(playmaker) + (Math.random() * 5);
       if (pp >= 30) offense.assistTo = playmaker;
       // passerRating under 22 is an errant pass turnover
-      return [{ turnover: pp < 30, log: 'offense/pass' + (pp < 30 ? '/fail' : '/success') }];
+      return [{ turnover: pp < 30, log: 'offense/pass' + (pp < 30 ? '/fail' : '/success') }, Math.random() < 0.2 ? EVENT.SHOT : null];
     }
   },
   [EVENT.FACEOFF]: (home, away) => {
@@ -98,9 +102,11 @@ function simulateGame(away, home, logger = console.log) {
   logger(home.name, '#', home.goalie.number, home.goalie.first, home.goalie.last);
 
   const distribution = [
-    100,
-    15,
-    20,
+    75, // contest
+    11, // faceoff
+    0, // fastbreak - we never want these randomly
+    0, // shot - we never want these randomly
+    14, // turnover
   ];
 
   let eventCount = Math.floor(Math.random() * 40) + 120;
@@ -113,7 +119,7 @@ function simulateGame(away, home, logger = console.log) {
   let overtime = false;
 
   while (eventCount > 0 || awayScore === homeScore) {
-    const type = getRandomItem(EVENT, { distribution });
+    const type = next || getRandomItem(EVENT, { distribution });
     const offense = type === EVENT.FACEOFF || homePosession ? home : away;
     const defense = type === EVENT.FACEOFF || homePosession ? away : home;
     if (!processEvent[type]) throw new Error(`What is ${type}?`);

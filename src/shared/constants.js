@@ -1,6 +1,8 @@
 const EVENT = {
   CONTEST: 'contest',
   FACEOFF: 'faceoff',
+  FASTBREAK: 'fastBreak',
+  SHOT: 'shot',
   TURNOVER: 'turnover',
 };
 
