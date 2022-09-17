@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "sister": "6",
+    "name": "Empire"
+  },
+  {
+    "id": "2",
+    "sister": "8",
+    "name": "Hollywood"
+  },
+  {
+    "id": "3",
+    "sister": "4",
+    "name": "Tundra"
+  },
+  {
+    "id": "4",
+    "sister": "3",
+    "name": "Industry"
+  },
+  {
+    "id": "5",
+    "sister": "7",
+    "name": "Cactus"
+  },
+  {
+    "id": "6",
+    "sister": "1",
+    "name": "Food Belt"
+  },
+  {
+    "id": "7",
+    "sister": "5",
+    "name": "Sunshine"
+  },
+  {
+    "id": "8",
+    "sister": "2",
+    "name": "Evergreen"
+  }
+]

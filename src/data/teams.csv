@@ -1,65 +1,73 @@
-id,name,nickname,city,state,country,Logo Status,abbr,short,font,fontSize,color1,color2,color3,rival,venue,uniform1,numerals1,uniform2,numerals2,divId,numerals,reason,division
-1,Boston,Lobsters,Boston,MA,USA,FINISHED,BOS,Lobs,Lilita One,12,#d00,#036,,NY,Boston Common,1,2,2,1,1,1234567890,Caught fresh daily,Empire
-2,Connecticut,Clams,Hartford,CT,USA,FINISHED,CT,,Share,14,#036,#bbb,,RI,Colt Park,1,2,2,1,1,1234567890,Ever had them on apizza?,Empire
-3,Montreal,Maple Syrups,Montreal,QC,CAN,REWORK,MTL,,Exo 2,12,#049,#e00,#963,TOR,Connaught Park,1,2,2,1,1,1234567890,moved from Toronto because it's more Quebecois,Empire
-4,New Jersey,Scoops,Newark,NJ,USA,FINISHED,NJ,,Squada One,14,#64d,#0a0,,PHI,West Hudson Park,1,2,2,1,1,1234567890,Not the Nets,Empire
-5,New York,Mettwursts,New York,NY,USA,FINISHED,NY,Metts,Iceberg,12,#f70,#049,,BOS,Riverside Park,1,2,2,1,1,1234567890,Not the Mets,Empire
-6,Ottawa,Traders,Ottawa,ON,CAN,NONE,OTT,,Playfair Display,12,#e00,#000,,NONE,Marion Square,1,2,3,2,1,1234567890,it's what the name means,Empire
-7,Philadelphia,Cheesesteaks,Philadelphia,PA,USA,FINISHED,PHI,Steaks,Luckiest Guy,12,#049,#fb0,,NJ,Fairmount Park,1,2,2,1,1,1234567890,"Philly and Cheesesteak, name a more iconic duo",Empire
-8,Rhode Island,Yachts,Providence,RI,USA,FINISHED,RI,Yots,Oleo Script,12,#48f,#eee,#e00,CT,India Point Park,1,2,2,3,1,1234567890,There's like a million yachts there,Empire
-9,California,Raisins,Sacramento,CA,USA,FINISHED,CAL,,Rakkas,12,#62d,#222,,NONE,McKinley Park,1,2,2,1,2,1234567890,Two scoops of Raisins,Hollywood
-10,Hawai'i,Pineapples,Honolulu,HI,USA,REWORK,HI,,Sigmar One,12,#0a0,#f38,#fc0,SD,Kapi'olani Regional Park,1,2,3,1,2,1234567890,Stolen from Charleston but makes way more sense here,Hollywood
-11,Los Angeles,Pharaohs,Los Angeles,CA,USA,FINISHED,LA,,Cairo,12,#fb0,#61f,,NONE,Roxbury Park,1,2,2,1,2,1234567890,Not the Kings,Hollywood
-12,Oakland,Academics,Oakland,CA,USA,FINISHED,OAK,Nerds,Kelly Slab,12,#080,#fb0,,NONE,Lowell Park,1,2,2,1,2,1234567890,Not the Athletics,Hollywood
-13,Orange County,,Newport Beach,CA,USA,NONE,OC,,Arvo,12,#f80,#fc0,#09c,NONE,,,,,,2,1234567890,,Hollywood
-14,San Diego,Whalers,San Diego,CA,USA,FINISHED,SD,,Yeseva One,12,#036,#fb0,,HI,Ski Beach Park,1,2,2,1,2,1234567890,"Do you know what ""San Diego"" means in German?",Hollywood
-15,San Francisco,Sea Lions,San Francisco,CA,USA,FINISHED,SF,Seals,Federant,12,#62d,#bbb,,NONE,Golden Gate Park,1,2,2,1,2,1234567890,Fisherman's Wharf is full of them,Hollywood
-16,San Jose,Cybercats,San Jose,CA,USA,FINISHED,SJ,Cycats,Orbitron,12,#333,#0ef,,NONE,Baylands Park,1,2,2,1,2,1234567890,Not the (AFL) Sabrecats - and reflects silicon valley influence,Hollywood
-17,Chicago,Hares,Chicago,IL,USA,FINISHED,CHI,,Trade Winds,12,#082,#bbb,,NONE,Lincoln Park,1,2,2,1,3,1234567890,O'Hare Airport,Tundra
-18,Dakota,Rushmores,Sioux Falls,SD,USA,FINISHED,DAK,,Wellfleet,12,#aaa,#d00,,NONE,Falls Park,1,2,2,1,3,1234567890,So presidential,Tundra
-19,Kansas City,Chefs,Kansas City,MO,USA,FINISHED,KC,,Chewy,12,#092,#444,#fff,NONE,LookOut Point,1,2,3,1,3,1234567890,Great googly moogly,Tundra
-20,Milwaukee,Muensters,Milwaukee,WI,USA,FINISHED,MIL,,Joti One,12,#f90,#fd6,#036,NONE,Veterans Park,1,3,3,2,3,1234567890,Wisconsin Cheese,Tundra
-21,Minnesota,Squirrels,Minneapolis,MN,USA,FINISHED,MIN,,Skranji,12,#aaa,#35d,#036,NONE,Bryn Mawr Meadows Park,1,2,2,1,3,1234567890,Golden Gophers,Tundra
-22,Omaha,Stalkers,Omaha,NE,USA,REWORK,OMA,,Margarine,12,#fd0,#060,,NONE,Roberts Park,1,2,2,1,3,1234567890,Corn stalks,Tundra
-23,St Louis,Archers,St. Louis,MO,USA,FINISHED,STL,,Josefin Sans,14,#62d,#000,,NONE,Luther Ely Smith Park,1,2,2,1,3,1234567890,Gateway to the West,Tundra
-24,Winnipeg,Heffalumps,Winnipeg,MB,CAN,FINISHED,WIN,Lumps,Underdog,12,#f89,#48f,#eee,NONE,Whittier Park,1,2,2,1,3,1234567890,Winnie the Peg,Tundra
-25,Buffalo,Buffalo,Buffalo,NY,USA,FINISHED,BUF,Buffs,Graduate,12,#036,#f90,,NONE,Masten Park,1,2,2,1,4,1234567890,Buffalo buffalo buffalo buffalo buffalo buffalo buffalo buffalo.,Industry
-26,Cincinnati,Coneys,Cincinnati,OH,USA,FINISHED,CIN,,Sriracha,12,#04f,#fc0,,NONE,Friendship Park,1,2,2,1,4,1234567890,Delicious,Industry
-27,Cleveland,Rollers,Cleveland,OH,USA,NONE,CLE,,Rubik,12,#000,#e00,,NONE,Edgewater Park,1,2,2,1,4,1234567890,Sherwin Williams and also Rock & ROLL duh,Industry
-28,Columbus,Griffins,Columbus,OH,USA,REWORK,CMB,Griffs,Jockey One,14,#801,#fc4,,NONE,Park of Roses,1,2,2,1,4,1234567890,"I don't care, I want this name and I'm keeping it",Industry
-29,Detroit,Pistoffs,Detroit,MI,USA,FINISHED,DET,,Ceviche One,14,#036,#e00,,NONE,Rouge Park,1,2,2,1,4,1234567890,Better to be Pistoff than to be Piston,Industry
-30,Indiana,Appleseeds,Indianapolis,IN,USA,FINISHED,IND,Seeds,Carter One,12,#e00,#edb,#743,NONE,Eagle Creek Park,1,2,2,1,4,1234567890,Johnny Appleseed to be exact,Industry
-31,Pittsburgh,Polar Bears,Pittsburgh,PA,USA,FINISHED,PIT,Pobears,Patua One,12,#000,#fb0,#eee,NONE,Frick Park,1,2,3,1,4,1234567890,Anything but Penguins,Industry
-32,Toronto,,Toronto,ON,CAN,NONE,TOR,,Cabin,12,#e00,#eee,,MTL,Harbour Square Park,1,2,3,1,4,1234567890,,Industry
-33,Albuquerque,Fallout,Albuquerque,NM,USA,FINISHED,ABQ,Nukes,Unlock,12,#f70,#000,#9999,NONE,Coronado Park,1,2,2,1,5,1234567890,Nuclear testing here,Cactus
-34,Austin,Armadillos,Austin,TX,USA,FINISHED,AUS,Dillos,Arvo,12,#800,#fb0,,NONE,Zilker Metropolitan Park,1,2,2,1,5,1234567890,Roadkill every quarter mile,Cactus
-35,Dallas,Tycoons,Dallas,TX,USA,REWORK,DAL,Tykes,Rye,12,#036,#743,#ccc,NONE,Klyde Warren Park,1,3,2,1,5,1234567890,What a bunch of Texas Teabags,Cactus
-36,Houston,Voyagers,Houston,TX,USA,FINISHED,HOU,,Atomic Age,12,#62d,#ccc,#222,NONE,Memorial Park,1,2,2,1,5,1234567890,Houston we have a problem... but not really,Cactus
-37,Las Vegas,Jackpots,Las Vegas,NV,USA,FINISHED,LV,Jacks,Revalia,12,#e00,#0a0,#000,NONE,Gary Reese Freedom Park,1,2,3,2,5,1234567890,Bingpot,Cactus
-38,Oklahoma City,Twisters,Oklahoma City,OK,USA,FINISHED,OKC,,Sirin Stencil,12,#d00,#555,#f90,NONE,Wheeler Park,1,2,2,1,5,1234567890,Not the board game,Cactus
-39,Phoenix,Moons,Phoenix,AZ,USA,FINISHED,PHX,,Concert One,12,#036,#4af,,NONE,University Park,1,2,2,1,5,1234567890,Not the Suns,Cactus
-40,San Antonio,Catnaps,San Antonio,TX,USA,REWORK,SA,Naps,Sedgwick Ave,12,#000,#62d,,NONE,Pittman-Sullivan Park,1,2,2,1,5,1234567890,Moved from Fort Worth - plus there's a cat at the Alamo I think,Cactus
-41,Baltimore,Oreos,Baltimore,MD,USA,FINISHED,BAL,,Slackey,12,#000,#04f,#eee,NONE,Patterson Park,1,2,2,1,6,1234567890,Not the Orioles,Food Belt
-42,Carolina,Reapers,Raleigh,NC,USA,FINISHED,CAR,Reaps,BenchNine,14,#000,#0a0,,NONE,Fred Fletcher Park,1,2,3,1,6,1234567890,Like the Pepper,Food Belt
-43,Charlotte,Wasps,Charlotte,NC,USA,SKETCH,CHA,,Alata,12,#4af,#000,,NONE,Mallard Creek Community Park,1,2,2,1,6,1234567890,"Hornets + https://en.wikipedia.org/wiki/Charlotte,_North_Carolina#Religion",Food Belt
-44,Louisville,Sluggers,Louisville,KY,USA,FINISHED,LOU,Slugs,Freckle Face,14,#0f1,#090,#000,NONE,Waterfront Park,1,2,3,1,6,1234567890,Baseball Bats,Food Belt
-45,Memphis,Hound Dogs,Memphis,TN,USA,FINISHED,MEM,Dogs,Quando,11,#000,#04f,,NONE,Mississippi River Park,1,2,2,1,6,1234567890,Elvis,Food Belt
-46,Nashville,Hot Chickens,Nashville,TN,USA,FINISHED,NSH,Chicks,Bigshot One,14,#f70,#800,,NONE,Centennial Park,1,2,2,1,6,1234567890,Delicious,Food Belt
-47,Virginia,Neptunes,Virginia Beach,VA,USA,FINISHED,VIR,Tunes,Merienda,12,#049,#48f,#4d8,NONE,Princess Anne Athletic Complex,1,2,2,1,6,1234567890,Some statue,Food Belt
-48,Washington,Fat Cats,Washington,DC,USA,FINISHED,WSH,Fats,BioRhyme,12,#036,#e00,,NONE,Walter Pierce Park,1,2,2,1,6,1234567890,Those damn fat cats in washington named this team after themselves,Food Belt
-49,Atlanta,Peaches,Atlanta,GA,USA,FINISHED,ATL,,Spicy Rice,14,#f97,#0a0,#eee,NONE,Centennial Olympic Park,1,2,3,2,7,1234567890,All the roads are named after peachtrees so,Sunshine
-50,Birmingham,Bears,Birmingham,AL,USA,FINISHED,BIR,,Fredoka One,12,#070,#eee,,NONE,Fountain Heights Park,1,2,2,1,7,1234567890,Bear Bryant,Sunshine
-51,Jacksonville,Kingfish,Jacksonville,FL,USA,NONE,JAX,Fish,Risque,14,#48f,#049,#0a0,NONE,Metropolitan park,1,2,2,1,7,1234567890,https://kingfishtournament.com/festival/,Sunshine
-52,Miami,Melt,Miami,FL,USA,FINISHED,MIA,,Limelight,12,#48f,#f0a,#000,NONE,Alice Wainright Park,1,2,2,1,7,1234567890,Not the Heat,Sunshine
-53,New Orleans,Voodoo,New Orleans,LA,USA,FINISHED,NO,,Corben,12,#62d,#097,#fb0,NONE,City Park,1,2,3,1,7,1234567890,Voodoo dolls,Sunshine
-54,Orlando,Ocelots,Orlando,FL,USA,FINISHED,ORL,,Staatliches,14,#555,#f90,,NONE,Festival Park,1,2,2,1,7,1234567890,Why not,Sunshine
-55,Savannah,Spirits,Savannah,GA,USA,FINISHED,SAV,,Spectral,12,#000,#0b9,#0ef,NONE,Forsyth Park,1,2,2,1,7,1234567890,Haunted City but also an Open Container City,Sunshine
-56,Tampa,Parrots,Tampa,FL,USA,REWORK,TAM,Pollies,Pirata One,14,#e00,#442,#fd2,NONE,Cotanchobee Fort Brooke Park,1,2,2,1,7,1234567890,Buccaneers need pets too,Sunshine
-57,Calgary,Chinooks,Calgary,AB,CAN,NONE,CGY,,Amarante,12,#f70,#48f,,NONE,,,,,,8,1234567890,https://en.wikipedia.org/wiki/Chinook_wind,Evergreen
-58,Colorado,Bighorns,Denver,CO,USA,NONE,COL,Rado,Chelsea Market,12,#ddd,#72c,#fa0,NONE,Washington Park,1,2,3,1,8,1234567890,State animal - rocky mountain bighorn sheep,Evergreen
-59,Edmonton,Auroras,Edmonton,AB,CAN,REWORK,EDM,,Baumans,12,#b3f,#4af,#0a3,NONE,Louise McKinney Riverfront Park,1,2,2,1,8,1234567890,the Northern Lights,Evergreen
-60,Idaho,Potatoes,Boise,ID,USA,REWORK,IDA,Spuds,Bevan,12,#743,#0a0,#fec,NONE,Ann Morrison Park,1,2,2,1,8,1234567890,Potatoes,Evergreen
-61,Portland,Platypi,Portland,OR,USA,FINISHED,POR,,Lemon,12,#092,#f70,,NONE,Delta Park,1,2,2,1,8,1234567890,UO Ducks + OSU Beavers,Evergreen
-62,Salt Lake,Sea Monkeys,Salt Lake City,UT,USA,FINISHED,SLC,C-Monks,McLaren,12,#62d,#48f,,NONE,Pioneer Park,1,2,2,1,8,1234567890,Salt Lake is full of them,Evergreen
-63,Seattle,Downpour,Seattle,WA,USA,FINISHED,SEA,Drizz,Bitter,12,#096,#888,,NONE,Myrtle Edwards Park,1,2,2,1,8,1234567890,I hear it rains there a lot,Evergreen
-64,Vancouver,Sasquatch,Vancouver,BC,CAN,FINISHED,VAN,,Bowlby One,12,#4af,#743,#eee,NONE,Stanley Park,1,2,3,1,8,1234567890,Legendary PNW Creature,Evergreen
+id,name,nickname,city,state,country,Logo Status,abbr,short,font,fontSize,color1,color2,color3,divId,venue,numerals,reason,division
+1,Boston,Lobsters,Boston,MA,USA,FINISHED,BOS,Lobs,Lilita One,12,#d00,#036,,1,Boston Common,1234567890,Caught fresh daily,Empire
+2,Connecticut,Clams,Hartford,CT,USA,FINISHED,CT,,Share,14,#036,#bbb,,1,Colt Park,1234567890,Ever had them on apizza?,Empire
+3,Montreal,Maple Syrups,Montreal,QC,CAN,FINISHED,MTL,Surps,Exo 2,12,#049,#e00,#963,1,Connaught Park,1234567890,moved from Toronto because it's more Quebecois,Empire
+4,New Jersey,Scoops,Newark,NJ,USA,FINISHED,NJ,,Squada One,14,#64d,#0a0,,1,West Hudson Park,1234567890,Not the Nets,Empire
+5,New York,Mettwursts,New York,NY,USA,FINISHED,NY,Metts,Iceberg,12,#f70,#049,,1,Riverside Park,1234567890,Not the Mets,Empire
+6,Ottawa,Traders,Ottawa,ON,CAN,FINISHED,OTT,,Playfair Display,12,#000,#f00,,1,Marion Square,1234567890,That's what Ottawa means,Empire
+7,Philadelphia,Cheesesteaks,Philadelphia,PA,USA,FINISHED,PHI,Steaks,Luckiest Guy,12,#049,#fb0,,1,Fairmount Park,1234567890,"Philly and Cheesesteak, name a more iconic duo",Empire
+8,Rhode Island,Yachts,Providence,RI,USA,FINISHED,RI,Yots,Oleo Script,12,#48f,#eee,#e00,1,India Point Park,1234567890,There's like a million yachts there,Empire
+9,Toronto,Tyrannosaurs,Toronto,ON,CAN,FINISHED,TOR,T-Rexes,Yeon Sung,14,#e00,#111,#82e,1,Harbour Square Park,1234567890,Not the Raptors and a lil CALLBACK,Empire
+10,Anaheim,Geese,Anaheim,CA,USA,FINISHED,ANA,,Anton,12,#f80,#09c,#000,2,Orange County Great Park,1234567890,WHY ARE WE FIGHTING THIS,Hollywood
+11,California,Raisins,Sacramento,CA,USA,FINISHED,CAL,,Rakkas,12,#62d,#fb0,,2,McKinley Park,1234567890,Two scoops of Raisins,Hollywood
+12,Hawai'i,Pineapples,Honolulu,HI,USA,FINISHED,HI,,Sigmar One,12,#0a0,#fb0,#fc0,2,Kapi'olani Regional Park,1234567890,Stolen from Charleston but makes way more sense here,Hollywood
+13,Las Vegas,Jackpots,Las Vegas,NV,USA,FINISHED,LV,Jacks,Revalia,12,#e00,#0a0,#000,2,Gary Reese Freedom Park,1234567890,Bingpot,Hollywood
+14,Los Angeles,Pharaohs,Los Angeles,CA,USA,FINISHED,LA,Raohs,Cairo,12,#daaf20,#36f,,2,Roxbury Park,1234567890,Not the Kings,Hollywood
+15,Oakland,Academics,Oakland,CA,USA,FINISHED,OAK,Nerds,Kelly Slab,12,#080,#fb0,,2,Lowell Park,1234567890,Not the Athletics,Hollywood
+16,San Diego,Whalers,San Diego,CA,USA,FINISHED,SD,,Yeseva One,12,#036,#fb0,,2,Ski Beach Park,1234567890,"Do you know what ""San Diego"" means in German?",Hollywood
+17,San Francisco,Sea Lions,San Francisco,CA,USA,FINISHED,SF,Seals,Federant,12,#62d,#bbb,,2,Golden Gate Park,1234567890,Fisherman's Wharf is full of them,Hollywood
+18,San Jose,Cybercats,San Jose,CA,USA,FINISHED,SJ,Cycats,Orbitron,12,#333,#0ef,,2,Baylands Park,1234567890,Not the (AFL) Sabrecats - and reflects silicon valley influence,Hollywood
+19,Chicago,Hares,Chicago,IL,USA,FINISHED,CHI,,Trade Winds,12,#082,#bbb,,3,Lincoln Park,1234567890,O'Hare Airport,Tundra
+20,Dakota,Rushmores,Rapid City,SD,USA,FINISHED,DAK,,Wellfleet,12,#aaa,#d00,,3,,1234567890,So presidential,Tundra
+21,Fargo,Freeze,Fargo,ND,USA,FINISHED,FGO,,Calibri,14,#4af,#801,,3,,1234567890,,Tundra
+22,Kansas City,Chefs,Kansas City,MO,USA,FINISHED,KC,,Chewy,12,#092,#444,#fc0,3,LookOut Point,1234567890,Great googly moogly,Tundra
+23,Milwaukee,Muensters,Milwaukee,WI,USA,FINISHED,MIL,,Joti One,12,#f90,#fd6,#036,3,Veterans Park,1234567890,Wisconsin Cheese,Tundra
+24,Minnesota,Squirrels,Minneapolis,MN,USA,FINISHED,MIN,,Skranji,12,#aaa,#35d,#036,3,Bryn Mawr Meadows Park,1234567890,Golden Gophers,Tundra
+25,Omaha,Stalkers,Omaha,NE,USA,FINISHED,OMA,,Margarine,12,#fd0,#060,,3,Roberts Park,1234567890,Corn stalks,Tundra
+26,St Louis,Archers,St. Louis,MO,USA,FINISHED,STL,,Josefin Sans,14,#62d,#000,,3,Luther Ely Smith Park,1234567890,Gateway to the West,Tundra
+27,Winnipeg,Heffalumps,Winnipeg,MB,CAN,FINISHED,WIN,Lumps,Underdog,12,#f89,#48f,#eee,3,Whittier Park,1234567890,Winnie the Peg,Tundra
+28,Buffalo,Buffalo,Buffalo,NY,USA,FINISHED,BUF,Buffs,Graduate,12,#036,#f90,,4,Masten Park,1234567890,Buffalo buffalo buffalo buffalo buffalo buffalo buffalo buffalo.,Industry
+29,Cincinnati,Coneys,Cincinnati,OH,USA,FINISHED,CIN,,Sriracha,12,#04f,#fc0,,4,Friendship Park,1234567890,Delicious,Industry
+30,Cleveland,Rocks,Cleveland,OH,USA,FINISHED,CLE,,New Rocker,14,#000,#e00,,4,Edgewater Park,1234567890,Rock and Roll,Industry
+31,Columbus,Griffins,Columbus,OH,USA,FINISHED,CMB,Griffs,Jockey One,14,#801,#fc4,,4,Park of Roses,1234567890,"Columbus is the true birthplace of chadminton, which makes us like chadminton royalty. Also, chadminton is kind of like a mythical sport, and the Griffin is the king of mythical beasts.",Industry
+32,Dayton,Aeronauticals,Dayton,OH,USA,FINISHED,DAY,Aeros,Averia Sans Libre,14,#4af,#ed0,,4,,1234567890,,Industry
+33,Detroit,Pistoffs,Detroit,MI,USA,FINISHED,DET,,Ceviche One,14,#036,#e00,,4,Rouge Park,1234567890,Better to be Pistoff than to be Piston,Industry
+34,Grand Rapids,Chairmen,Grand Rapids,MI,USA,FINISHED,GRA,,Odibee Sans,14,#228b22,#003700,,4,,1234567890,,Industry
+35,Indiana,Appleseeds,Indianapolis,IN,USA,FINISHED,IND,Seeds,Carter One,12,#e00,#edb,#743,4,Eagle Creek Park,1234567890,Johnny Appleseed to be exact,Industry
+36,Pittsburgh,Polar Bears,Pittsburgh,PA,USA,FINISHED,PIT,Pobears,Patua One,12,#000,#fb0,#6de,4,Frick Park,1234567890,Anything but Penguins,Industry
+37,Albuquerque,Fallout,Albuquerque,NM,USA,FINISHED,ABQ,Nukes,Unlock,12,#f70,#000,#9999,5,Coronado Park,1234567890,Nuclear testing here,Cactus
+38,Austin,Bats,Austin,TX,USA,FINISHED,ATX,,Arvo,12,#406,#e73,#db9,5,Zilker Metropolitan Park,1234567890,Congress Ave Bridge Bats,Cactus
+39,Dallas,Giraffes,Dallas,TX,USA,FINISHED,DAL,,Rye,12,#fc0,#743,#fff,5,Klyde Warren Park,1234567890,Psh let's just go for it,Cactus
+40,El Paso,Peppers,El Paso,TX,USA,FINISHED,ELP,Peps,Kavoon,14,#e00,#0a0,#f90,5,,1234567890,,Cactus
+41,Fort Worth,Catnaps,Fort Worth,TX,USA,FINISHED,FTW,Naps,Passero One,14,#61f,#000,#bbb,5,Trinity Park,1234567890,Panthers sleep here,Cactus
+42,Houston,Voyagers,Houston,TX,USA,FINISHED,HOU,,Atomic Age,12,#62d,#ccc,#222,5,Memorial Park,1234567890,Houston we have a problem... but not really,Cactus
+43,Oklahoma City,Twisters,Oklahoma City,OK,USA,FINISHED,OKC,,Sirin Stencil,12,#d00,#555,#f90,5,Wheeler Park,1234567890,Not the board game,Cactus
+44,Phoenix,Moons,Phoenix,AZ,USA,FINISHED,PHX,,Concert One,12,#036,#4af,,5,University Park,1234567890,Not the Suns,Cactus
+45,San Antonio,Firs,San Antonio,TX,USA,FINISHED,SA,,Sedgwick Ave,12,#073,#fff,#4f2,5,Pittman-Sullivan Park,1234567890,Moved from Fort Worth - plus there's a cat at the Alamo I think,Cactus
+46,Baltimore,Oreos,Baltimore,MD,USA,FINISHED,BAL,,Slackey,12,#000,#04f,#eee,6,Patterson Park,1234567890,Not the Orioles,Food Belt
+47,Carolina,Reapers,Raleigh,NC,USA,FINISHED,CAR,Reaps,BenchNine,14,#000,#0a0,,6,Fred Fletcher Park,1234567890,Like the Pepper,Food Belt
+48,Charlotte,Wasps,Charlotte,NC,USA,FINISHED,CHA,,Alata,12,#4af,#000,,6,Mallard Creek Community Park,1234567890,"Hornets + https://en.wikipedia.org/wiki/Charlotte,_North_Carolina#Religion",Food Belt
+49,Delaware,Wolves,Dover,DE,USA,FINISHED,DEL,,Josefin Sans,14,#00203a,#fff649,#999,6,,1234567890,It's a pun,Food Belt
+50,Louisville,Sluggers,Louisville,KY,USA,FINISHED,LOU,Slugs,Freckle Face,14,#0f1,#090,#000,6,Waterfront Park,1234567890,Baseball Bats,Food Belt
+51,Memphis,Hound Dogs,Memphis,TN,USA,FINISHED,MEM,Dogs,Quando,11,#000,#04f,,6,Mississippi River Park,1234567890,Elvis,Food Belt
+52,Nashville,Hot Chickens,Nashville,TN,USA,FINISHED,NSH,Chicks,Bigshot One,14,#f70,#800,,6,Centennial Park,1234567890,Delicious,Food Belt
+53,Virginia,Neptunes,Virginia Beach,VA,USA,FINISHED,VIR,Tunes,Merienda,12,#049,#48f,#4d8,6,Princess Anne Athletic Complex,1234567890,Some statue,Food Belt
+54,Washington,Fatcats,Washington,DC,USA,FINISHED,WSH,,BioRhyme,12,#036,#e00,,6,Walter Pierce Park,1234567890,Those damn fat cats in washington named this team after themselves,Food Belt
+55,Arkansas,Armadillos,Little Rock,AR,USA,FINISHED,ARK,,Oxanium,12,#801,#ed0,,7,,1234567890,,Sunshine
+56,Atlanta,Peaches,Atlanta,GA,USA,FINISHED,ATL,,Spicy Rice,14,#f97,#0a0,#eee,7,Centennial Olympic Park,1234567890,All the roads are named after peachtrees so,Sunshine
+57,Birmingham,Bears,Birmingham,AL,USA,FINISHED,BIR,,Fredoka One,12,#070,#eee,,7,Fountain Heights Park,1234567890,Bear Bryant,Sunshine
+58,Jacksonville,Holy Mackerels,Jacksonville,FL,USA,FINISHED,JAX,Macks,Risque,14,#369,#025,#fd0,7,Metropolitan park,1234567890,https://kingfishtournament.com/festival/,Sunshine
+59,Miami,Melt,Miami,FL,USA,FINISHED,MIA,,Westmeath,12,#48f,#f0a,#000,7,Alice Wainright Park,1234567890,Not the Heat,Sunshine
+60,New Orleans,Voodoo,New Orleans,LA,USA,FINISHED,NO,Doo,Corben,12,#608,#097,#fb0,7,City Park,1234567890,Voodoo dolls,Sunshine
+61,Orlando,Ocelots,Orlando,FL,USA,FINISHED,ORL,Lots,Staatliches,14,#555,#f90,,7,Festival Park,1234567890,Why not,Sunshine
+62,Savannah,Spirits,Savannah,GA,USA,FINISHED,SAV,,Fondamento,14,#124a45,#40abb1,,7,,1234567890,Spooky,Sunshine
+63,Tampa,Parrots,Tampa,FL,USA,FINISHED,TAM,,Pirata One,14,#e00,#442,#fd2,7,Cotanchobee Fort Brooke Park,1234567890,Buccaneers need pets too,Sunshine
+64,Alaska,Malamutes,Anchorage,AK,USA,rework,AKA,Pups,Anton,12,#222,#cdf,,8,,1234567890,5 now dog 5,Evergreen
+65,Calgary,Snow Eaters,Calgary,AB,CAN,FINISHED,CGY,,Amarante,12,#f70,#48f,,8,Nose Hill Park,1234567890,https://en.wikipedia.org/wiki/Chinook_wind,Evergreen
+66,Colorado,Bighorns,Denver,CO,USA,FINISHED,COL,Rado,Chelsea Market,12,#bbb,#72c,#fb8,8,Washington Park,1234567890,State animal - rocky mountain bighorn sheep,Evergreen
+67,Edmonton,Auroras,Edmonton,AB,CAN,FINISHED,EDM,,Baumans,12,#b3f,#4af,#0a3,8,Louise McKinney Riverfront Park,1234567890,the Northern Lights,Evergreen
+68,Idaho,Potatoes,Boise,ID,USA,FINISHED,IDA,Spuds,Bevan,12,#743,#0a0,#fec,8,Ann Morrison Park,1234567890,Potatoes,Evergreen
+69,Portland,Platypi,Portland,OR,USA,FINISHED,POR,,Lemon,12,#092,#f70,,8,Delta Park,1234567890,UO Ducks + OSU Beavers,Evergreen
+70,Salt Lake,Sea Monkeys,Salt Lake City,UT,USA,FINISHED,SLC,C-Monks,McLaren,12,#62d,#48f,,8,Pioneer Park,1234567890,Salt Lake is full of them,Evergreen
+71,Seattle,Downpour,Seattle,WA,USA,FINISHED,SEA,,Bitter,12,#096,#888,,8,Myrtle Edwards Park,1234567890,I hear it rains there a lot,Evergreen
+72,Vancouver,Sasquatch,Vancouver,BC,CAN,FINISHED,VAN,Squatch,Bowlby One,12,#4af,#743,#eee,8,Stanley Park,1234567890,Legendary PNW Creature,Evergreen

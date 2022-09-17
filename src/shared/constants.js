@@ -42,10 +42,13 @@ const attributes = [
   'heart',
 ];
 
+const SCHEDULE_PLACEHOLDER = '__REPLACE__';
+
 module.exports = {
   EVENT,
   POSITIONS,
   RESULT,
+  SCHEDULE_PLACEHOLDER,
   attributes,
   attributeMap,
 };
