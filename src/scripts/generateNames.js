@@ -81,6 +81,7 @@ const generatePositionPlayers = (position, team) => {
       age: getAge(),
       number: Math.floor(Math.random() * 100),
       team,
+      rookieSeason: 0, // this league starts FRESH at 0 so all players are technically rookies
       attributes: getAttributes(position),
     };
     const overall = player.attributes.reduce((agg, attr) => agg + attr, 0);
