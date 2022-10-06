@@ -42,6 +42,9 @@ const getRandomSuffix = () => {
     'ington',
     'face',
     'by',
+    'stein',
+    'berg',
+    'er',
   ];
   return prefixes[Math.floor(Math.random() * prefixes.length)];
 }
