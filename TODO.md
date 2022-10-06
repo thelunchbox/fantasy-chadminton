@@ -4,13 +4,10 @@
 
 ### Backend
 
+- DATABASE SUPPORT
 - Add fatigue system to game simulation
   - The more contests a player participates in, the more their stats are adversely affected (based on their stamina)
-- Write function to generate a schedule
-  - 72 teams, 8 division of 9 teams
-  - play every team in your division 2 times = 8 \* 2 = 16 games (16)
-  - play every team in your sister division 1 time = 9 games (25)
-  - play every team in another rotating division 1 time = 9 games (34)
+- Write function to generate a playoff schedule
   - top 16 teams make the playoffs
   - every round is best of 5 games
 - Add code to run daily simulation
