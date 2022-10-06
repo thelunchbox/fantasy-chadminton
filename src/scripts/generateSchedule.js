@@ -1,6 +1,8 @@
 const teams = require('../data/teams.json');
 const divisions = require('../data/divisions.json');
 const { SCHEDULE_PLACEHOLDER } = require('../shared/constants');
+const fs = require('fs');
+const path = require('path');
 
 const rotateArraysWithPivot = (a, b) => {
   // the first team in the top row stays as a pivot, so we take the second (index 1)
@@ -137,7 +139,7 @@ for (i in divTops) {
   }
 }
 
-schedule.map((week, index) => {
+schedule = schedule.map((week, index) => {
   if (index === week / 2) {
     rotateArraysWithPivot(divTops, divBots);
   }
@@ -159,10 +161,7 @@ schedule.map((week, index) => {
       games.push(game);
     }
     return [
-      ...week.filter(game => {
-        console.log('filtering out...', game);
-        return !game.includes(SCHEDULE_PLACEHOLDER);
-      }),
+      ...week.filter(game => !game.includes(SCHEDULE_PLACEHOLDER)),
       ...games,
     ];
 });
@@ -172,4 +171,4 @@ schedule = [
   ...schedule,
 ];
 
-console.log(schedule);
+fs.writeFileSync(path.resolve(__dirname, '../data/schedule.json'), JSON.stringify(schedule));
