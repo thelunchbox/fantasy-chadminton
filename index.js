@@ -16,9 +16,9 @@ console.log(0);
 console.log('MATCHUP PREVIEW');
 const awayPower = getTeamPower(away.players);
 const homePower = getTeamPower(home.players);
-console.log(away.name, away.nickname, `(${away.division})`, ' -> ', awayPower, awayPower / (homePower + awayPower));
-console.log(home.name, home.nickname, `(${home.division})`, ' -> ', homePower, homePower / (homePower + awayPower));
-console.log(home.venue, home.city, home.state);
+console.log(away.name, away.nickname, `(${away.divId})`, ' -> ', awayPower, awayPower / (homePower + awayPower));
+console.log(home.name, home.nickname, `(${home.divId})`, ' -> ', homePower, homePower / (homePower + awayPower));
+console.log(`${home.venue} - ${home.city}, ${home.state}`);
 
 const COUNT = 10000;
 const wins = [0, 0];

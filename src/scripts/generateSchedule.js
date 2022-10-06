@@ -1,6 +1,7 @@
 const teams = require('../data/teams.json');
 const divisions = require('../data/divisions.json');
 const { SCHEDULE_PLACEHOLDER } = require('../shared/constants');
+const { getTeamByField } = require('../shared/utils');
 const fs = require('fs');
 const path = require('path');
 
@@ -70,6 +71,15 @@ const getSisterDivisionScheduleMatrix = (teams) => {
   return schedule;
 };
 
+const getTeamSchedule = (schedule, team) => {
+  const teamSchedule = schedule.map(w => {
+    const game = w.find(g => g.includes(team));
+    if (game[0] === team) return `at ${game[1]}`;
+    return `vs ${game[0]}`; 
+  });
+  return [teamSchedule, teamSchedule.filter(g => g.startsWith('vs')).length];
+}
+
 const getDivisionParings = () => {
   const tops = [];
   const bots = [];
@@ -81,8 +91,6 @@ const getDivisionParings = () => {
   });
   return [tops, bots];
 };
-
-const getTeamByField = (field, value) => teams.find(team => team[field] === value);
 
 const divisionMatrix = getDivisionScheduleMatrix(9, 2);
 const crossDivMatrix = getSisterDivisionScheduleMatrix(9);
@@ -145,7 +153,7 @@ schedule = schedule.map((week, index) => {
   }
     const byeTeams = week.filter(game => game.includes(SCHEDULE_PLACEHOLDER)).map(([away, home]) => {
       const isHome = away === SCHEDULE_PLACEHOLDER;
-      const team = getTeamByField('abbr', isHome ? home : away);
+      const team = getTeamByField(teams, 'abbr', isHome ? home : away);
       team.isHome = isHome;
       return team;
   });
@@ -170,5 +178,12 @@ schedule = [
   ...crossDivSchedule,
   ...schedule,
 ];
+
+console.log(`Schedule generated for ${schedule.length} weeks.`);
+teams.forEach(t => {
+  const [teamSchedule, homeGames] = getTeamSchedule(schedule, t.abbr);
+  console.log(t.name);
+  console.log(teamSchedule);
+})
 
 fs.writeFileSync(path.resolve(__dirname, '../data/schedule.json'), JSON.stringify(schedule));

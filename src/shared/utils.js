@@ -103,9 +103,12 @@ function playmakerRating(p) {
   );
 }
 
+const getTeamByField = (teams, field, value) => teams.find(team => team[field] === value);
+
 module.exports = {
   getRandomItem,
   getRandomWeighted,
+  getTeamByField,
   getTeamPlayers,
   getTeamPower,
   defenderRating,

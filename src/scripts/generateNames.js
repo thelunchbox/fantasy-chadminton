@@ -16,37 +16,40 @@ const positionsPerTeam = {
   [POSITIONS.GOALKEEPER]: 2,
 };
 
+const PREFIXES = [
+  'Mc',
+  'O\'',
+  'van ',
+  'de ',
+  'van der ',
+  'Di',
+  'D\'',
+  'J\'',
+];
+
+const SUFFIXES = [
+  'inen',
+  'son',
+  'smith',
+  ', Jr.',
+  ' III',
+  'ington',
+  'face',
+  'by',
+  'stein',
+  'berg',
+  'er',
+  'io',
+];
+
 const getAttributes = position => attributeMap[position].map(attr => Math.max(attr, Math.round(Math.random() * 100) / 10));
 
 const getRandomPrefix = () => {
-  const prefixes = [
-    'Mc',
-    'O\'',
-    'van ',
-    'de ',
-    'van der ',
-    'Di',
-    'D\'',
-    'J\'',
-  ];
-  return prefixes[Math.floor(Math.random() * prefixes.length)];
+  return PREFIXES[Math.floor(Math.random() * PREFIXES.length)];
 }
 
 const getRandomSuffix = () => {
-  const prefixes = [
-    'inen',
-    'son',
-    'smith',
-    ', Jr.',
-    ' III',
-    'ington',
-    'face',
-    'by',
-    'stein',
-    'berg',
-    'er',
-  ];
-  return prefixes[Math.floor(Math.random() * prefixes.length)];
+  return SUFFIXES[Math.floor(Math.random() * SUFFIXES.length)];
 }
 
 const getAge = (current) => {
@@ -62,13 +65,18 @@ const generatePositionPlayers = (position, team) => {
   const iterations = positionsPerTeam[position];
   const result = [];
   for (let p = 0; p < iterations; p++) {
-    const lastNameLength = Math.random() > 0.95 ? 2 : 1;
-    const prefix = Math.random() > 0.88 ? getRandomPrefix() : '';
-    const suffix = Math.random() > 0.92 ? getRandomSuffix() : '';
+    const firstName = Math.random() > 0.94 
+      ? words(1).map(capitalize).join('') 
+      : Math.random() > 0.7 
+        ? names.femaleRandom() : names.maleRandom();
+    const lastNameLength = Math.random() > 0.80 ? 2 : 1;
+    const baseName = words(lastNameLength).map(capitalize).join('-');
+    const prefix = Math.random() > 0.80 ? getRandomPrefix() : '';
+    const suffix = baseName.length < 4 || Math.random() > 0.55 ? getRandomSuffix() : '';
     const player = {
       id: uuid(),
-      first: names.allRandom(),
-      last: `${prefix}${words(lastNameLength).map(capitalize).join('-')}${suffix}`,
+      first: firstName,
+      last: `${prefix}${baseName}${suffix}`,
       position,
       age: getAge(),
       number: Math.floor(Math.random() * 100),
