@@ -16,9 +16,9 @@ week.forEach(([a, h]) => {
   
   const awayPower = getTeamPower(away.players);
   const homePower = getTeamPower(home.players);
-  console.log(away.name, away.nickname, `(${away.divId})`, ' -> ', awayPower, awayPower / (homePower + awayPower));
-  console.log(home.name, home.nickname, `(${home.divId})`, ' -> ', homePower, homePower / (homePower + awayPower));
-  console.log(`${home.venue} - ${home.city}, ${home.state}`);
+  console.log(away.name, away.nickname, `(${away.divId})`, Math.round(awayPower));
+  console.log(home.name, home.nickname, `(${home.divId})`, Math.round(homePower));
+  console.log(`${home.venue || 'Memorial Park'} - ${home.city}, ${home.state}`);
   
   const { awayScore, homeScore, overtime } = simulateGame(away, home, () => {});
   const roadUpset = homePower - awayPower > 12 && awayScore > homeScore;
