@@ -1,6 +1,7 @@
 const teams = require('../data/teams.json');
 const divisions = require('../data/divisions.json');
 const { SCHEDULE_PLACEHOLDER } = require('../shared/constants');
+const { CURRENT_SEASON } = require('../data/settings.json');
 const { getTeamByField } = require('../shared/utils');
 const fs = require('fs');
 const path = require('path');
@@ -92,10 +93,6 @@ const getDivisionParings = () => {
   return [tops, bots];
 };
 
-const divisionMatrix = getDivisionScheduleMatrix(9, 2);
-const crossDivMatrix = getSisterDivisionScheduleMatrix(9);
-const [divTops, divBots] = getDivisionParings();
-
 const teamsByDivision = teams.sort(() => Math.random() - 0.5).reduce((agg, team) => {
   const { divId } = team;
   if (!agg[divId]) {
@@ -104,6 +101,11 @@ const teamsByDivision = teams.sort(() => Math.random() - 0.5).reduce((agg, team)
   agg[divId].push(team);
   return agg;
 }, {});
+
+const teamsPerDivision = teamsByDivision['1'].length;
+const divisionMatrix = getDivisionScheduleMatrix(teamsPerDivision, 2);
+const crossDivMatrix = getSisterDivisionScheduleMatrix(teamsPerDivision);
+const [divTops, divBots] = getDivisionParings();
 
 let schedule = [];
 
@@ -123,15 +125,14 @@ for (d in teamsByDivision) {
   }
 }
 
-// well we're going to take care of the first team later
-crossDivMatrix.shift();
 const crossDivSchedule = [];
 
+// if we have an odd number of teams, the first one of these will be taken care of (and we play them twice because... we just do)
+const start = teamsPerDivision % 2 === 1 ? 1 : 0;
 for (i in divTops) {
-  // get sister divisions
   const division1 = teamsByDivision[divTops[i]];
   const division2 = teamsByDivision[divBots[i]];
-  for (let w = 0; w < crossDivMatrix.length; w+=1) {
+  for (let w = start; w < crossDivMatrix.length; w += 1) {
     const games = crossDivMatrix[w];
     const week = games.map(([a, h]) => {
       const t1 = division1[a];
@@ -146,22 +147,25 @@ for (i in divTops) {
     crossDivSchedule[w] = [...crossDivSchedule[w], ...week];
   }
 }
+// if the first element is empty, we just toss it out
+if (!crossDivSchedule[0]) crossDivSchedule.shift();
 
 schedule = schedule.map((week, index) => {
-  if (index === week / 2) {
-    rotateArraysWithPivot(divTops, divBots);
-  }
-    const byeTeams = week.filter(game => game.includes(SCHEDULE_PLACEHOLDER)).map(([away, home]) => {
-      const isHome = away === SCHEDULE_PLACEHOLDER;
-      const team = getTeamByField(teams, 'abbr', isHome ? home : away);
-      team.isHome = isHome;
-      return team;
+  const byeTeams = week.filter(game => game.includes(SCHEDULE_PLACEHOLDER)).map(([away, home]) => {
+    const isHome = away === SCHEDULE_PLACEHOLDER;
+    const team = getTeamByField(teams, 'abbr', isHome ? home : away);
+    team.isHome = isHome;
+    return team;
   });
     const games = [];
     while (byeTeams.length > 0) {
       const t1 = byeTeams.shift();
-      const otherDiv = divBots[divTops.indexOf(t1.divId)];
+      let otherDiv = divBots[divTops.indexOf(t1.divId)];
+      if (!otherDiv) otherDiv = divTops[divBots.indexOf(t1.divId)];
       const t2 = byeTeams.find(t => t.divId === otherDiv);
+      if (!t2) {
+        console.error(week, t1.abbr, t1.divId, byeTeams.map(({ abbr, divId }) => ({ abbr, divId })), otherDiv);
+      }
       const teamIndex = byeTeams.indexOf(t2);
       byeTeams.splice(teamIndex, 1);
       const game = [t1.abbr, t2.abbr];
@@ -174,16 +178,43 @@ schedule = schedule.map((week, index) => {
     ];
 });
 
+console.log('original', divTops, divBots);
+let oocRotation = (CURRENT_SEASON % 6) + 1;
+while (oocRotation--) rotateArraysWithPivot(divTops, divBots);
+console.log('after rotation', divTops, divBots);
+
+const oocSchedule = [];
+for (i in divTops) {
+  const division1 = teamsByDivision[divTops[i]];
+  const division2 = teamsByDivision[divBots[i]];
+  for (let w = 0; w < crossDivMatrix.length; w += 1) {
+    const games = crossDivMatrix[w];
+    const week = games.map(([a, h]) => {
+      const t1 = division1[a];
+      const t2 = division2[h];
+      const game = [t1.abbr, t2.abbr];
+      if (w % 2 === CURRENT_SEASON % 2) {
+        game.reverse();
+      }
+      return game;
+    });
+    if (!oocSchedule[w]) oocSchedule[w] = [];
+    oocSchedule[w] = [...oocSchedule[w], ...week];
+  }
+}
+
 schedule = [
+  ...oocSchedule,
   ...crossDivSchedule,
   ...schedule,
 ];
 
 console.log(`Schedule generated for ${schedule.length} weeks.`);
-teams.forEach(t => {
+teams.sort((a, b) => a.id - b.id).forEach(t => {
   const [teamSchedule, homeGames] = getTeamSchedule(schedule, t.abbr);
   console.log(t.name);
+  console.log(homeGames, 'home games');
   console.log(teamSchedule);
-})
+});
 
-fs.writeFileSync(path.resolve(__dirname, '../data/schedule.json'), JSON.stringify(schedule));
+// fs.writeFileSync(path.resolve(__dirname, '../data/schedule.json'), JSON.stringify(schedule));

@@ -2,9 +2,8 @@ const { simulateGame } = require('./simulateGame');
 const teams = require('../data/teams.json');
 const players = require('../data/players.json');
 const schedule = require('../data/schedule.json');
+const { CURRENT_WEEK } = require('../data/settings.json');
 const { getTeamPower, getTeamPlayers, getTeamByField } = require('../shared/utils');
-
-const CURRENT_WEEK = 0; // later this should be dynamic
 
 const week = schedule[CURRENT_WEEK];
 

@@ -1,6 +1,6 @@
 const { processEvent } = require('../simulate/simulateGame');
 const teams = require('../data/teams.json');
-const players = require('../data/players-keep.json');
+const players = require('../data/players.json');
 const { POSITIONS } = require('../shared/constants');
 const { getTeamPlayers, goalieRating } = require('../shared/utils');
 
