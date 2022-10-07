@@ -35,9 +35,9 @@ function getRandomWeighted(array) {
 const goalOpportunityScore = {
   [POSITIONS.STRIKER]: 5,
   [POSITIONS.SWEEPER]: 4,
-  [POSITIONS.DEFENDER]: 3,
-  [POSITIONS.CHAD]: 2,
-  [POSITIONS.GOALKEEPER]: 1,
+  [POSITIONS.DEFENDER]: 1.2,
+  [POSITIONS.CHAD]: 0.8,
+  [POSITIONS.GOALKEEPER]: 0.1,
 };
 
 function scoreRating(p) {
